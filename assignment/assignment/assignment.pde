@@ -7,14 +7,24 @@
 *as well as experiment with other options 
 *like changing speed and proximity detection
 */
-int x = width/2;//Set position of square
-int y = height/2;
+int x;//Values to manipulate later
+int y;
+
+int deltax = 1;//values for movement
+int deltay = 1;
+
+int speed = 2;
 
 void setup(){
   size(700,700);//Size of canvas
+  
+  x=width/2;//Set x and y to center of canvas
+  y=height/2;
+  
 }
 
 void draw(){
+ 
   background(255,255,255);
   
   fill(0,0,0);
@@ -22,4 +32,29 @@ void draw(){
   
   fill(255,0,0);//Barrier for later use
   rect(0,0,700,40);
+  
+  text(speed, 100,100);
+}
+
+void keyPressed() {
+    if (keyCode == UP) {
+      y = y-speed;
+    }
+    if (keyCode == DOWN) {
+      y = y+speed;
+    }
+    if (keyCode == LEFT) {
+      x = x-speed;
+    }
+    if (keyCode == RIGHT) {
+      x = x+speed;
+    }
+    if (key == 112) {
+      speed = 4;
+    }
+    if (key == 111) {
+      speed = 1;
+    }
+  
+  
 }
