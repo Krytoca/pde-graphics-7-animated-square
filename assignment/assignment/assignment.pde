@@ -25,15 +25,28 @@ void setup(){
 
 void draw(){
  
+  if (y == 720) {
+    y = 0;
+  }
+  if (x == 720){
+    x = 0;
+  }
+  if (x == -20){
+    x = 700;
+  }
+  if (y == -20) {
+    y = 700;
+  }
+  
   background(255,255,255);
   
   fill(0,0,0);
   rect(x,y,20,20);//Draw rectangle that will be manipulated
+ 
   
-  fill(255,0,0);//Barrier for later use
-  rect(0,0,700,40);
   
   text(speed, 100,100);
+  text(y, 100,150);
 }
 
 void keyPressed() {
