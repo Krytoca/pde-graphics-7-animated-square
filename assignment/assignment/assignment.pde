@@ -25,7 +25,7 @@ void setup(){
 
 void draw(){
  
-  if (y == 720) {
+  if (y == 720) { //Set x and y limit for wrapping
     y = 0;
   }
   if (x == 720){
@@ -45,12 +45,13 @@ void draw(){
  
   
   
-  text(speed, 100,100);
-  text(y, 100,150);
+  text(speed, 100,100);//Print out speed
+  text(y, 100,150);//Print y value
+  text(x,100,200);
 }
 
 void keyPressed() {
-    if (keyCode == UP) {
+    if (keyCode == UP) {//Set key bindings
       y = y-speed;
     }
     if (keyCode == DOWN) {
@@ -62,10 +63,10 @@ void keyPressed() {
     if (keyCode == RIGHT) {
       x = x+speed;
     }
-    if (key == 112) {
+    if (key == 112) {// Option for aditional speed
       speed = 4;
     }
-    if (key == 111) {
+    if (key == 111) {//Option for lowerspeed
       speed = 1;
     }
   
