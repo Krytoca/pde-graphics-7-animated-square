@@ -13,7 +13,7 @@ int y;
 int deltax = 1;//values for movement
 int deltay = 1;
 
-int speed = 2;
+int speed = 2;//Speed of rectangle
 
 void setup(){
   size(700,700);//Size of canvas
@@ -37,17 +37,25 @@ void draw(){
   if (y == -20) {
     y = 700;
   }
-  
+ 
   background(255,255,255);
+  
+  if (y <= 40) {//Formula for proximity detection
+    fill(0,0,0);
+    text("Warning: Wormhole detected ahead. Approach with caution.",200,300);
+  }
   
   fill(0,0,0);
   rect(x,y,20,20);//Draw rectangle that will be manipulated
+  
+  fill(255,0,0);//Draw red danger zone
+  rect(0,0,700,40);
  
   
-  
-  text(speed, 100,100);//Print out speed
-  text(y, 100,150);//Print y value
-  text(x,100,200);
+  fill(0,0,255);
+  text(speed, 50,100);//Print out speed
+  text(y, 50,150);//Print y value
+  text(x,50,200);
 }
 
 void keyPressed() {
